@@ -1,0 +1,6 @@
+let partialRemoteUrlToDetect = "google.com" // Change this to a URL you like to find machines
+DeviceNetworkEvents
+| where TimeStamp > ago(7d) and RemoteURL has partialRemoteUrlToDetect 
+| project Timestamp, DeviceName, DeviceId, ReportId, RemoteUrl
+| top 100 by Timestamp desc
+

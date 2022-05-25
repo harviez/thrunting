@@ -1,0 +1,4 @@
+EmailEvents
+| where Subject contains "search string here "
+| join kind=inner EmailUrlInfo on $left.NetworkMessageId==$right.NetworkMessageId
+

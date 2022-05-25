@@ -1,0 +1,4 @@
+EmailUrlInfo
+| where Url contains "https://www.google.com" or Url contains "https://yahoo.com"
+| join kind=inner EmailEvents on $left.NetworkMessageId==$right.NetworkMessageId
+

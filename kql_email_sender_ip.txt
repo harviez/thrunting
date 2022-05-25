@@ -1,0 +1,4 @@
+EmailEvents
+| where SenderIPV == "external IP address"
+| join kind=inner EmailURlInfo on $left.NetworkMessageId==$right.NetworkMessageId
+
